@@ -8,8 +8,7 @@
 {% endblock %}
 
 {% block content %}
-    <h1>{{ review.title }}</h1>
+    <h1>{{ review.author }}</h1>
     <p class="pre">{{ review.text }}</p>
-    <p>By: {{ review.author }} | {{ review.created_at|date:"d.m.Y H:i:s" }}</p>
-    <p>Published at: {{ review.publish_at|date:"d.m.Y H:i:s" }}</p>
+    <p>By: {{ review.email }} </p>
 {% endblock %}

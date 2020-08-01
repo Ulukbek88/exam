@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from webapp.views import index_view, review_create_view, review_view, \
+    review_update_view, review_delete_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', index_view, name='index'),
+    path('review/<int:pk>/', review_view, name='review_view'),
+    path('reviews/add/', review_create_view, name='review_create'),
+    path('review/<int:pk>/update/', review_update_view, name='review_update'),
+    path('review/<int:pk>/delete/', review_delete_view, name='review_delete')
 ]

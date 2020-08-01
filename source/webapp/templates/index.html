@@ -3,7 +3,7 @@
 {% block title %}Гостевая книга{% endblock %}
 
 {% block content %}
-    <h1>Статьи:</h1>
+    <h1>Отзывы</h1>
     {% for review in reviews %}
         <h3><a href="{% url "review_view" review.pk %}">{{ review.author }}</a></h3>
         <p>Статус: ({{ review.status }} | {{ review.get_status_display }})</p>

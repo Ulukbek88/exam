@@ -17,3 +17,10 @@ class Review(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Время создания')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Время изменения')
 
+    def __str__(self):
+        return f'{self.author} - {self.email}'
+
+    class Meta:
+        verbose_name = 'Отзыв'
+        verbose_name_plural = 'Отзывы'
+

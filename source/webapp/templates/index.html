@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Гостевая книга{% endblock %}
+
+{% block content %}
+    <h1>Статьи:</h1>
+    {% for review in reviews %}
+        <h3><a href="{% url "review_view" review.pk %}">{{ review.title }}</a></h3>
+        <p>Статус: ({{ review.status }} | {{ review.get_status_display }})</p>
+        <p>{{ review.author }} | {{ review.created_at|date:"d.m.Y H:i:s" }}</p>
+        <p>Published at: {{ review.publish_at|date:"d.m.Y H:i:s" }}</p>
+        <p><a href="{% url 'review_update' review.pk %}">Update</a></p>
+        <p><a href="{% url 'review_delete' review.pk %}">Delete</a></p>
+    {% endfor %}
+{% endblock %}
